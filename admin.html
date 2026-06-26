@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Painel | Clube Reconecte-se</title>
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="admin">
+    <main class="admin-main">
+      <section class="login-view" id="loginView">
+        <div class="login-card">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <h1>Painel Reconecte-se</h1>
+          <p>Acesse para acompanhar inscrições e atualizar pagamentos.</p>
+          <form id="loginForm">
+            <label>
+              Senha
+              <input type="password" name="password" autocomplete="current-password" required />
+            </label>
+            <button class="button primary wide" type="submit">Entrar</button>
+            <p class="form-message" id="loginMessage" role="status"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="dashboard hidden" id="dashboardView">
+        <header class="admin-header">
+          <div>
+            <p class="eyebrow">Administração</p>
+            <h1>Dashboard</h1>
+          </div>
+          <div class="admin-actions">
+            <a class="button ghost" href="index.html">Ver página</a>
+            <button class="button small" id="refreshButton" type="button">Atualizar</button>
+            <button class="button small danger" id="logoutButton" type="button">Sair</button>
+          </div>
+        </header>
+
+        <section class="stat-grid" aria-label="Resumo das inscrições">
+          <article class="stat-card">
+            <span>Confirmadas</span>
+            <strong id="statConfirmed">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>Aguardando Pagamento</span>
+            <strong id="statPending">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>Lista de Espera</span>
+            <strong id="statWaitlist">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>Canceladas</span>
+            <strong id="statCancelled">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>Total</span>
+            <strong id="statTotal">0</strong>
+          </article>
+        </section>
+
+        <section class="admin-panel">
+          <div class="filters">
+            <label>
+              Pesquisar
+              <input id="searchInput" type="search" placeholder="Nome ou telefone" />
+            </label>
+            <label>
+              Status
+              <select id="statusFilter">
+                <option value="">Todos</option>
+                <option>Aguardando pagamento</option>
+                <option>Confirmado</option>
+                <option>Cancelado</option>
+                <option>Lista de Espera</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>WhatsApp</th>
+                  <th>Data</th>
+                  <th>Status</th>
+                  <th>Origem</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="registrationsTable"></tbody>
+            </table>
+          </div>
+          <p class="form-message" id="adminMessage" role="status"></p>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

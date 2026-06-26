@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clube Reconecte-se | Inscrição</title>
+    <meta
+      name="description"
+      content="Inscrição para a Oficina de Pintura em Tela do Clube Reconecte-se."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="landing">
+    <div class="paint-orbit paint-orbit-one"></div>
+    <div class="paint-orbit paint-orbit-two"></div>
+
+    <header class="hero">
+      <nav class="topbar" aria-label="Principal">
+        <a class="brand" href="index.html" aria-label="Clube Reconecte-se">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Clube Reconecte-se</span>
+        </a>
+        <a class="admin-link" href="admin.html">Painel</a>
+      </nav>
+
+      <section class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Olá, seja bem-vinda ao</p>
+          <h1>Clube Reconecte-se</h1>
+          <p class="tagline">Sua vida com mais cor</p>
+          <p class="intro">
+            Um clube criado para mulheres que desejam desacelerar, respirar,
+            despertar a criatividade e viver momentos leves através das artes
+            manuais, boas conversas e conexões verdadeiras.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#inscricao">Fazer inscrição</a>
+            <a class="button ghost" href="#oficina">Ver detalhes</a>
+          </div>
+        </div>
+
+        <div class="art-panel" aria-label="Foto da Oficina de Pintura em Tela">
+          <figure class="workshop-photo-card">
+            <img
+              class="workshop-photo"
+              src="workshop-photo.jpeg"
+              alt="Participante pintando uma tela durante uma oficina de pintura"
+            />
+            <figcaption class="photo-caption">
+              <span>Oficina de Pintura em Tela</span>
+              <strong>04 de Julho</strong>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section info-section" id="oficina">
+        <div class="section-heading">
+          <p class="eyebrow">Próximo encontro</p>
+          <h2>Oficina de Pintura em Tela</h2>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-item">
+            <span class="icon" aria-hidden="true">◷</span>
+            <p>Data</p>
+            <strong>Sábado, 04 de Julho de 2026</strong>
+          </article>
+          <article class="info-item">
+            <span class="icon" aria-hidden="true">◴</span>
+            <p>Horário</p>
+            <strong>15h00</strong>
+          </article>
+          <article class="info-item">
+            <span class="icon" aria-hidden="true">⌂</span>
+            <p>Local</p>
+            <strong>Hecon Consórcios</strong>
+            <small>Av. Guilherme de Paula Xavier, 1146, Centro, Campo Mourão</small>
+          </article>
+          <article class="info-item">
+            <span class="icon" aria-hidden="true">◇</span>
+            <p>Valor</p>
+            <strong>R$ 120,00</strong>
+          </article>
+          <article class="info-item">
+            <span class="icon" aria-hidden="true">18+</span>
+            <p>Idade mínima</p>
+            <strong>18 anos</strong>
+          </article>
+        </div>
+
+        <div class="included">
+          <span>✓ Todo material incluso</span>
+          <span>✓ Café incluso</span>
+        </div>
+      </section>
+
+      <section class="section signup-section" id="inscricao">
+        <div class="section-heading">
+          <p class="eyebrow">Inscrição</p>
+          <h2>Reserve seu lugar</h2>
+        </div>
+
+        <div class="signup-layout">
+          <div class="form-shell" id="activeSignup">
+            <form id="signupForm" novalidate>
+              <label>
+                Nome completo
+                <input
+                  type="text"
+                  name="name"
+                  autocomplete="name"
+                  placeholder="Seu nome"
+                  required
+                />
+              </label>
+
+              <label>
+                WhatsApp
+                <input
+                  type="tel"
+                  name="whatsapp"
+                  inputmode="numeric"
+                  autocomplete="tel"
+                  placeholder="(44) 99999-9999"
+                  required
+                />
+              </label>
+
+              <button class="button primary wide" type="submit">
+                Enviar inscrição
+              </button>
+              <p class="form-message" id="signupMessage" role="status"></p>
+            </form>
+          </div>
+
+          <div class="waitlist-shell hidden" id="waitlistSignup">
+            <div class="closed-notice">
+              <h3>As inscrições para esta oficina foram encerradas.</h3>
+              <p>Cadastre-se na lista de espera para ser avisada da próxima oficina.</p>
+            </div>
+
+            <form id="waitlistForm" novalidate>
+              <label>
+                Nome
+                <input type="text" name="name" autocomplete="name" required />
+              </label>
+              <label>
+                WhatsApp
+                <input
+                  type="tel"
+                  name="whatsapp"
+                  inputmode="numeric"
+                  autocomplete="tel"
+                  placeholder="(44) 99999-9999"
+                  required
+                />
+              </label>
+              <button class="button primary wide" type="submit">
+                Entrar na lista de espera
+              </button>
+              <p class="form-message" id="waitlistMessage" role="status"></p>
+            </form>
+          </div>
+
+          <aside class="payment-box" aria-labelledby="paymentTitle">
+            <h2 id="paymentTitle">Pagamento da inscrição</h2>
+            <p>Escolha uma das formas de pagamento abaixo.</p>
+
+            <div class="payment-method">
+              <span class="method-label">PIX</span>
+              <strong id="pixKey">(44) 99966-5209</strong>
+              <button class="button small" id="copyPix" type="button">
+                Copiar chave PIX
+              </button>
+            </div>
+
+            <a
+              class="button card-button"
+              href="https://mpago.li/1HUCjPr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Pagar com cartão
+            </a>
+
+            <a
+              class="button whatsapp-button"
+              href="https://wa.link/44toih"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Enviar comprovante pelo WhatsApp
+            </a>
+
+            <p class="payment-warning">
+              A inscrição será confirmada somente após o envio do comprovante de
+              pagamento.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="final-message" aria-label="Mensagem final">
+        <p>Aguardo você para vivermos esse capítulo do Reconecte-se! 💛</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
