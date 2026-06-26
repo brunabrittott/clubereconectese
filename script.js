@@ -1,5 +1,5 @@
 const CONFIG = {
-  apiUrl: "",
+  apiUrl: "https://script.google.com/macros/s/AKfycbw68bxs8mW01H6O-1kWUNGfIX0kheiZ1gB0khoLnW0p6TxpnYOMD11dMNyyDmN2nErScw/exec",
   pixKey: "(44) 99966-5209",
   capacity: 9,
   localStorageKey: "reconecte_registrations_demo",
