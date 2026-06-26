@@ -70,15 +70,47 @@ async function apiRequest(action, payload = {}) {
     return localApi(action, payload);
   }
 
-  const response = await fetch(CONFIG.apiUrl, {
-    method: "POST",
-    headers: { "Content-Type": "text/plain;charset=utf-8" },
-    body: JSON.stringify({ action, ...payload }),
-  });
+  return jsonpRequest(action, payload);
+}
 
-  const data = await response.json();
-  if (!data.ok) throw new Error(data.message || "Não foi possível concluir.");
-  return data;
+function jsonpRequest(action, payload = {}) {
+  return new Promise((resolve, reject) => {
+    const callbackName = `reconecteCallback_${Date.now()}_${Math.random()
+      .toString(36)
+      .slice(2)}`;
+    const script = document.createElement("script");
+    const timeout = window.setTimeout(() => {
+      cleanup();
+      reject(new Error("Não foi possível conectar ao sistema de inscrições."));
+    }, 15000);
+
+    function cleanup() {
+      window.clearTimeout(timeout);
+      script.remove();
+      delete window[callbackName];
+    }
+
+    window[callbackName] = (data) => {
+      cleanup();
+      if (!data.ok) {
+        reject(new Error(data.message || "Não foi possível concluir."));
+        return;
+      }
+      resolve(data);
+    };
+
+    const params = new URLSearchParams({
+      action,
+      callback: callbackName,
+      payload: JSON.stringify(payload),
+    });
+    script.src = `${CONFIG.apiUrl}?${params.toString()}`;
+    script.onerror = () => {
+      cleanup();
+      reject(new Error("Não foi possível carregar a integração com a planilha."));
+    };
+    document.body.appendChild(script);
+  });
 }
 
 async function localApi(action, payload) {
