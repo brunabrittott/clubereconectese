@@ -275,7 +275,7 @@ h3 {
 .workshop-photo-card {
   position: relative;
   width: min(100%, 430px);
-  aspect-ratio: 0.86;
+  aspect-ratio: 1154 / 1408;
   margin: 0;
   border-radius: 28px;
   box-shadow: var(--shadow);
@@ -294,7 +294,7 @@ h3 {
 .photo-caption {
   position: absolute;
   right: 22px;
-  bottom: 22px;
+  top: 22px;
   left: 22px;
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 20px;
@@ -822,6 +822,6 @@ th {
   }
 
   .workshop-photo-card {
-    aspect-ratio: 0.92;
+    aspect-ratio: 1154 / 1408;
   }
 }
